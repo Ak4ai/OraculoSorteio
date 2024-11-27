@@ -1,0 +1,22 @@
+{
+    "name": "Oráculo Network",
+    "short_name": "Oráculo",
+    "description": "Descrição do seu projeto",
+    "start_url": "/Oráculo/",
+    "display": "standalone",
+    "background_color": "#40252591",
+    "theme_color": "#40252591",
+    "icons": [
+      {
+        "src": "android-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "apple-icon-180x180.png",
+        "sizes": "180x180",
+        "type": "image/png"
+      }
+    ]
+  }
+  

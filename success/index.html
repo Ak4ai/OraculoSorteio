@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Night-City NetWire</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script> <!-- Adicione esta linha -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-skeleton">
+        <header class="app-header">
+            <div class="app-header__anchor">
+                <span class="app-header__anchor__text">Night-City NetWire</span>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link nav__link--active">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Messages</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Shop</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Map</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Files</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="app-container">
+            <aside class="app-a">
+                <div class="segment-topbar">
+                    <div class="segment-topbar__header">
+                        <h3 class="segment-topbar__title">Messages</h3>
+                    </div>
+                    <div class="segment-topbar__aside">
+                        <button class="button button--primary button--size-lg">
+                            <span class="button__icon"><i class="fas fa-plus"></i></span>
+                            <span class="button__content">Adicionar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <form class="form-search">
+                    <div class="form-group">
+                        <div class="form-control form-control--with-addon">
+                            <input name="query" placeholder="Search..." type="text" />
+                            <div class="form-control__addon form-control__addon--suffix"><i class="fas fa-search"></i></div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="nav-section">
+                    <div class="nav-section__header">
+                        <h2 class="nav-section__title">Groups</h2>
+                    </div>
+                    <div class="nav-section__body">
+                        <ul class="nav">
+                            <li class="nav__item">
+                                <a href="afterlife.html" class="nav__link">
+                                    <span class="channel-link">
+                                        <span class="channel-link__icon"><i class="fas fa-hashtag"></i></span>
+                                        <span class="channel-link__element">Afterlife</span>
+                                        <span class="channel-link__badge">3</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="ncpd-gigs.html" class="nav__link nav__link--active">
+                                    <span class="channel-link">
+                                        <span class="channel-link__icon"><i class="fas fa-hashtag"></i></span>
+                                        <span class="channel-link__element">NCPD-Gigs</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="pacifica.html" class="nav__link">
+                                    <span class="channel-link">
+                                        <span class="channel-link__icon"><i class="fas fa-hashtag"></i></span>
+                                        <span class="channel-link__element">Pacifica</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section__header">
+                        <h2 class="nav-section__title">Direct</h2>
+                    </div>
+                    <div class="nav-section__body">
+                        <ul class="nav">
+                            <li class="nav__item">
+                                <a href="" class="nav__link">
+                                    <span class="conversation-link conversation-link--online">
+                                        <span class="conversation-link__icon">
+                                        </span>
+                                        <span class="conversation-link__element" id="user-name"></span>
+                                        <script>
+                                            document.addEventListener("DOMContentLoaded", function() {
+                                                const userName = localStorage.getItem("nome") || "User";
+                                                document.getElementById("user-name").textContent = userName;
+                                            });
+                                        </script>
+                                        <span class="conversation-link__badge">5</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </aside>
+
+            <main class="app-main">
+                <div class="channel-feed">
+                    <div class="segment-topbar">
+                        <div class="segment-topbar__header">
+                            <span class="segment-topbar__overline">NetWire_Seed: d869db7fe62fb07c25a0403ecaea55031744b5sb</span>
+                            <h4 class="segment-topbar__title"><span id="nome"></span></h4>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    const nome = localStorage.getItem("nome") || "User";
+                                    document.getElementById("nome").textContent = nome;
+                                });
+                            </script>
+                        </div>
+                        <div class="segment-topbar__aside">
+                            <div class="button-toolbar">
+                                <button class="button button--default">
+                                    <span class="button__icon"><i class="fas fa-volume-mute"></i></span>
+                                </button>
+                                <button class="button button--default">
+                                    <span class="button__icon"><i class="fas fa-cog"></i></span>
+                                </button>
+                                <button class="button button--default">
+                                    <span class="button__icon"><i class="fas fa-ellipsis-h"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="channel-feed__body">
+                        <div class="answer">
+                            <div class="answer__body">
+                                <p id="dynamic-text"></p>
+                            </div>
+                            <div class="answer__footer">
+                                <span class="answer__author">System</span>
+                                <span class="answer__time"> - 2:15am</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="channel-feed__footer">
+                        <form class="channel-message-form">
+                            <div class="form-footer">
+                                <button id="draw-button" type="submit" class="button button--primary button--size-xl">Sortear</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="app-b">
+                <div class="pad">
+                    <div class="pad__body">
+                        <h4 class="pad__title">What's this?</h4>
+                        <p class="pad__text">Uma <em>Interface</em> do seu implate neural e dos cacos carregados nele.</p>
+                        <p class="pad__text">O objetivo dessa interface é comunicar-se com seus ncps de longa distancia, Eles vão te enviar informações e futuramente memórias.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

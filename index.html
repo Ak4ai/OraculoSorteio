@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Oraculo - terminal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container on">
+    <div class="screen">
+      <h3 class="title">
+        CONEXÃO BARRADA
+      </h3>
+      <div class="box--outer">
+        <div class="box">
+          <div class="box--inner">
+            <div class="content">
+              <div class="holder">
+                <b>Digite o nome da pessoa e 3 personagens</b>
+                <br>
+                <br>
+                <form id="loginForm" method="post" action="/password">
+                  <div class="row">
+                    <div class="col col__left label">
+                      Nome
+                    </div>
+                    <div class="col col__center">
+                      <input type="text" id="nome" name="nome" required="required" maxlength="32" autocomplete="new-password" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col col__left label">
+                      Personagem 1
+                    </div>
+                    <div class="col col__center">
+                      <input type="text" id="personagem1" name="personagem1" required="required" maxlength="32" autocomplete="new-password" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col col__left label">
+                      Personagem 2
+                    </div>
+                    <div class="col col__center">
+                      <input type="text" id="personagem2" name="personagem2" required="required" maxlength="32" autocomplete="new-password" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col col__left label">
+                      Personagem 3
+                    </div>
+                    <div class="col col__center">
+                      <input type="text" id="personagem3" name="personagem3" required="required" maxlength="32" autocomplete="new-password" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button type="submit" id="submit" name="submit">[login]</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
