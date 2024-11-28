@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const dynamicText = document.getElementById('dynamic-text');
+    const drawButton = document.getElementById('draw-button');
     const apiKey = '$2a$10$7SQ85bKrzfMW7tg8U1km/OevFO.nVsSj8Hfd0KqyDRYuJyYINqZjG'; // Sua chave de API do JSONBin.io
     const binId1 = '67479cd5ad19ca34f8d19ce2'; // Seu ID do primeiro bin no JSONBin.io
     const binId2 = '6747a2a9e41b4d34e45be47c'; // Substitua pelo ID do seu segundo bin no JSONBin.io
@@ -105,13 +106,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Call drawName to draw names from both bins and set the dynamic text
-    Promise.all([drawName(binId1), drawName(binId2)]).then(drawnNames => {
-        const [name1, name2] = drawnNames;
-        if (name1 && name2) {
-            dynamicText.textContent = `${name1}, ${name2}`;
-        } else {
-            console.error('Could not draw names from both bins');
-        }
+    document.getElementById('draw-button').addEventListener('click', (event) => {
+        event.preventDefault(); // Previne o comportamento padrão do botão
+        console.log('Button clicked');
+        // Call drawName to draw names from both bins and set the dynamic text
+        Promise.all([drawName(binId1), drawName(binId2)]).then(drawnNames => {
+            console.log('Drawn names:', drawnNames);
+            const [name1, name2] = drawnNames;
+            if (name1 && name2) {
+                dynamicText.textContent = `${name1}, ${name2}`;
+                alert('O nome já foi sorteado. Para evitar sorteá-lo novamente, é melhor sair depois verificar seus nomes sorteados.');
+            } else {
+                console.error('Failed to draw names from both bins');
+            }
+        }).catch(error => {
+            console.error('Error drawing names:', error);
+        });
     });
 });
